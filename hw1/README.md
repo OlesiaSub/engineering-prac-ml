@@ -1,4 +1,7 @@
-### HW1
+### HW2
 
 #### Launch:
-Run `python3 main.py` from scripts dir
+```
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+```
+добавить в path

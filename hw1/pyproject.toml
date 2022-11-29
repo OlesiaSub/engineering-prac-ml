@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "perceptron"
+version = "0.0.1"
+description = "engineering practices hw2"
+authors = [
+    "Subbotina Olesya"
+]
+maintainers = [
+    "Olesya Subbotina <lesya.sub@mail.ru>"
+]
+readme = "README.md"
+repository = "https://github.com/OlesiaSub/engineering-prac-ml"
+keywords = ["packaging", "poetry"]
+packages = [
+    {include = "scripts"}
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+numpy = "1.23.4"
+matplotlib = "3.6.2"
+scikit-learn = "1.1.0"
+pip = "22.0.3"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "2.15.4"
+pytest = "7.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -55,4 +55,5 @@ repos:
         ]
         args: [
           --max-line-length=80,
+          .\scripts\
         ]

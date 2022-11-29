@@ -26,7 +26,7 @@ repos:
 #        types: [ python ]
 #        additional_dependencies: [
 #          flake8-variables-names-0.0.5,
-#          flake8-comprehensions==3.10.1,
+#          flake8-return==1.2.0,
 #          flake8-warnings==0.3.0,
 #          flake8-functions==0.0.7,
 #          flake8-unused-arguments==2.4.0,
@@ -40,6 +40,10 @@ repos:
         entry: flake8
         language: system
         types: [ python ]
+        args: [
+          --max-line-length=80,
+          --ignore=C404
+        ]
 
   - repo: https://github.com/PyCQA/flake8
     rev: 5.0.4
@@ -48,12 +52,11 @@ repos:
         name: flake8
         additional_dependencies: [
           flake8-variables-names==0.0.5,
-          flake8-comprehensions==3.10.1,
+          flake8-return==1.2.0,
           flake8-warnings==0.3.0,
           flake8-functions==0.0.7,
           flake8-unused-arguments==0.0.11,
         ]
         args: [
-          --max-line-length=80,
-          .\scripts\
+          --max-line-length=80
         ]

@@ -7,31 +7,31 @@ from scripts.util import visualize
 
 
 def basic_clusters():
-    X, true_labels = make_blobs(400, 2, centers=[[0, 0], [2.5, 2.5]])
-    c = Perceptron()
-    c.fit(X, true_labels)
-    visualize(X, true_labels, np.array(c.predict(X)), c.w)
+    x_arr, true_labels = make_blobs(400, 2, centers=[[0, 0], [2.5, 2.5]])
+    perc = Perceptron()
+    perc.fit(x_arr, true_labels)
+    visualize(x_arr, true_labels, np.array(perc.predict(x_arr)), perc.w)
 
 
 def basic_moons():
-    X, true_labels = make_moons(400, noise=0.075)
-    c = Perceptron()
-    c.fit(X, true_labels)
-    visualize(X, true_labels, np.array(c.predict(X)), c.w)
+    x_arr, true_labels = make_moons(400, noise=0.075)
+    perc = Perceptron()
+    perc.fit(x_arr, true_labels)
+    visualize(x_arr, true_labels, np.array(perc.predict(x_arr)), perc.w)
 
 
 def best_clusters():
-    X, true_labels = make_blobs(400, 2, centers=[[0, 0], [2.5, 2.5]])
-    c = PerceptronBest()
-    c.fit(X, true_labels)
-    visualize(X, true_labels, np.array(c.predict(X)), c.w)
+    x_arr, true_labels = make_blobs(400, 2, centers=[[0, 0], [2.5, 2.5]])
+    perc = PerceptronBest()
+    perc.fit(x_arr, true_labels)
+    visualize(x_arr, true_labels, np.array(perc.predict(x_arr)), perc.w)
 
 
 def best_moons():
-    X, true_labels = make_moons(400, noise=0.075)
-    c = PerceptronBest()
-    c.fit(X, true_labels)
-    visualize(X, true_labels, np.array(c.predict(X)), c.w)
+    x_arr, true_labels = make_moons(400, noise=0.075)
+    perc = PerceptronBest()
+    perc.fit(x_arr, true_labels)
+    visualize(x_arr, true_labels, np.array(perc.predict(x_arr)), perc.w)
 
 
 if __name__ == '__main__':

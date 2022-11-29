@@ -4,7 +4,7 @@
 
 Использованные плагины:
   * flake8-variables-names
-  * flake8-comprehensions
+  * flake8-return
   * flake8-warnings
   * flake8-functions
   * flake8-unused-arguments

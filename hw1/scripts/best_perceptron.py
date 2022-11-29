@@ -1,4 +1,5 @@
 from typing import NoReturn
+
 import numpy as np
 
 from scripts.basic_perceptron import Perceptron

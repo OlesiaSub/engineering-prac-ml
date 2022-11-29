@@ -1,0 +1,46 @@
+default_stages: [ commit, push ]
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v2.5.0"
+    hooks:
+      - id: check-merge-conflict
+      - id: debug-statements
+
+  - repo: local
+    hooks:
+      - id: autopep8
+        name: autopep8
+        description: ''
+        entry: autopep8
+        language: python
+        'types': [ python ]
+        args: [ "-i" ]
+        require_serial: false
+        additional_dependencies: [ ]
+        minimum_pre_commit_version: '0'
+
+      - id: isort
+        name: isort (python)
+        entry: flake8
+        language: system
+        types: [ python ]
+        args: [
+          --max-line-length=80,
+          --ignore=C404
+        ]
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 5.0.4
+    hooks:
+      - id: flake8
+        name: flake8
+        additional_dependencies: [
+          flake8-variables-names==0.0.5,
+          flake8-return==1.2.0,
+          flake8-warnings==0.3.0,
+          flake8-functions==0.0.7,
+          flake8-unused-arguments==0.0.11,
+        ]
+        args: [
+          --max-line-length=80
+        ]

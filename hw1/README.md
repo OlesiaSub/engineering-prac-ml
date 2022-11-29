@@ -1,3 +1,12 @@
 ### HW3
 
-Код отформаитрован с использованием isort и 
+Код отформатирован с использованием isort и autopep8
+
+Использованные плагины:
+  * flake8-variables-names
+  * flake8-comprehensions
+  * flake8-warnings
+  * flake8-functions
+  * flake8-unused-arguments
+
+Список ошибок в linting.md

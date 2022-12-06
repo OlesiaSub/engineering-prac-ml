@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def visualize(x_arr, labels_true, labels_pred, ws):
+def visualize(x_arr, labels_true, labels_pred, ws, path):
     unique_labels = np.unique(labels_true)
     unique_colors = dict([(label, c) for label, c in zip(
         unique_labels, [[0.8, 0., 0.], [0., 0., 0.8]])])
@@ -28,3 +28,4 @@ def visualize(x_arr, labels_true, labels_pred, ws):
     plt.scatter(x_arr[:, 0], x_arr[:, 1],
                 c=colors_inner, edgecolors=colors_outer)
     plt.show()
+    plt.savefig(path)

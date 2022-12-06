@@ -2,7 +2,7 @@ from typing import NoReturn
 
 import numpy as np
 
-from scripts.basic_perceptron import Perceptron
+from basic_perceptron import Perceptron
 
 
 class PerceptronBest(Perceptron):

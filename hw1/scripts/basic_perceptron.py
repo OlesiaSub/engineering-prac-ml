@@ -1,4 +1,5 @@
 from typing import NoReturn
+
 import numpy as np
 
 
@@ -30,7 +31,7 @@ class Perceptron:
         self.inc = 1
         self.dec = -1
 
-    def fit(self, X: np.ndarray, y: np.ndarray) -> NoReturn:
+    def fit(self, x_arr: np.ndarray, y_arr: np.ndarray) -> NoReturn:
         """
         Обучает простой перцептрон.
         Для этого сначала инициализирует веса перцептрона,
@@ -38,35 +39,36 @@ class Perceptron:
 
         Parameters
         ----------
-        X : np.ndarray
+        x_arr : np.ndarray
             Набор данных, на котором обучается перцептрон.
-        y: np.ndarray
+        y_arr: np.ndarray
             Набор меток классов для данных.
 
         """
-        self.w = [0] * (X.shape[1] + 1)
-        (self.fst, self.snd) = np.unique(y)
-        for j in range(self.n):
+        self.w = [0] * (x_arr.shape[1] + 1)
+        (self.fst, self.snd) = np.unique(y_arr)
+        for j_cnt in range(self.n):
 
-            for i in range(len(X)):
+            for i in range(len(x_arr)):
                 cur_sum = self.w[0]
 
-                for xi in range(1, len(X[i]) + 1):
-                    xe = X[i][xi - 1]
+                for xi in range(1, len(x_arr[i]) + 1):
+                    xe = x_arr[i][xi - 1]
                     cur_sum += self.w[xi] * xe
 
-                if y[i] != ((self.fst, self.snd)[bool(cur_sum < 0)]):
+                if y_arr[i] != ((self.fst, self.snd)[bool(cur_sum < 0)]):
                     for wi in range(len(self.w)):
-                        self.w[wi] += (self.inc if y[i] == self.fst else self.dec) *\
-                                      (1 if wi == 0 else X[i][wi - 1])
+                        self.w[wi] += \
+                            (self.inc if y_arr[i] == self.fst else self.dec) * \
+                            (1 if wi == 0 else x_arr[i][wi - 1])
 
-    def predict(self, X: np.ndarray) -> np.ndarray:
+    def predict(self, x_arr: np.ndarray) -> np.ndarray:
         """
         Предсказывает метки классов.
 
         Parameters
         ----------
-        X : np.ndarray
+        x_arr : np.ndarray
             Набор данных, для которого необходимо вернуть метки классов.
 
         Return
@@ -77,9 +79,9 @@ class Perceptron:
 
         """
         ans = []
-        for x in X:
+        for xx in x_arr:
             cur_sum = self.w[0]
-            for xi in range(len(x)):
-                cur_sum += self.w[xi + 1] * x[xi]
+            for xi in range(len(xx)):
+                cur_sum += self.w[xi + 1] * xx[xi]
             ans.append((self.fst, self.snd)[bool(cur_sum < 0)])
         return ans

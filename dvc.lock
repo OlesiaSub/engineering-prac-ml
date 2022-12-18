@@ -1,0 +1,16 @@
+schema: '2.0'
+stages:
+  enter:
+    cmd: cd hw1
+  deps:
+    cmd: python -m pip install numpy matplotlib scikit-learn
+    deps:
+    - path: pyproject.toml
+      md5: d19ffef45a3f43264a169ee561cd5bcf
+      size: 631
+  run:
+    cmd: python hw1/scripts/main.py
+    deps:
+    - path: hw1/scripts/main.py
+      md5: 497e960515ffe51b61ec454ea606687d
+      size: 1431

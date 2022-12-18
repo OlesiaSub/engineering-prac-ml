@@ -1,0 +1,9 @@
+stages:
+  deps:
+    cmd: python -m pip install numpy matplotlib scikit-learn
+    deps:
+    - pyproject.toml
+  run:
+    cmd: python hw1/scripts/main.py
+    deps:
+    - hw1/scripts/main.py

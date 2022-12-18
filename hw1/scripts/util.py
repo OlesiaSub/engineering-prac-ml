@@ -27,5 +27,5 @@ def visualize(x_arr, labels_true, labels_pred, ws, path):
     colors_outer = [unique_colors[l_f] for l_f in labels_pred]
     plt.scatter(x_arr[:, 0], x_arr[:, 1],
                 c=colors_inner, edgecolors=colors_outer)
-    plt.show()
+    # plt.show()
     plt.savefig(path)
